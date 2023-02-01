@@ -11,13 +11,17 @@
     </nav>
   </header>
 
-  <main class="main">
-    <h1 class="title">{{ section.title }}</h1>
-    <ul>
-      {% for page in section.pages %}
-      <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </main>
+  <div class="main-container">
+    <div class="left"></div>
+    <main class="main">
+      <h1 class="title">{{ section.title }}</h1>
+      <ul class="blog-posts">
+        {% for page in section.pages %}
+        <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </main>
+    <div class="right"></div>
+  </div>
 </div>
 {% endblock content %}

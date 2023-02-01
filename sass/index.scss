@@ -15,7 +15,6 @@
 .header {
   height: 25vh;
   width: 100%;
-  border-bottom: 1px solid $border-color;
 
   display: flex;
   flex-direction: row;
@@ -27,8 +26,55 @@
   flex: 1;
   max-width: 960px;
   width: 70vw;
-  padding: 1.5em;
-  border: 1px solid $border-color;
+  padding: 0 3em;
   border-top: none;
   border-bottom: none;
+}
+
+.sides {
+  width: 15vw;
+  border: 2px solid $border-color;
+  height: 100%;
+}
+
+.left {
+  @extend .sides;
+  border-top-right-radius: 20% 10%;
+  border-left: none;
+}
+
+.right {
+  @extend .sides;
+  border-top-left-radius: 20% 10%;
+  border-right: none;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  min-height: 75vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+@import "colors";
+
+.blog-posts {
+  line-height: 2em;
+}
+
+.blog-posts li::marker {
+  color: $border-color;
+}
+
+.blog-posts li {
+  list-style: circle;
+}
+
+.blog-posts a:link {
+  color: $link-color;
+}
+
+.blog-posts a:visited {
+  color: $link-color-visited;
 }
